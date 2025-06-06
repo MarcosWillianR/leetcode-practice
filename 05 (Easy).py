@@ -15,20 +15,18 @@
 nums = [1,4,1,2]
 
 def getConcatenation(nums):
-    ans = [None] * (len(nums) * 2)
+    ans = [None] * (len(nums) * 2) # array of ans 2n
+    p = 0
 
-    # def concatenateNext():
-    #     for j in range(0, len(ans)):
-    #         if ans[j] is None:
-    #             ans[j] = nums[j] 
+    for i in range(0, len(ans)):
+        if p == len(nums):
+            p = 0 # will help to reset the pointer if the pointer points to the end of the length of nums.
 
-    for i in range(0, len(nums)):
-        # if i == len(nums):
-        #     concatenateNext()
-        #     break
-        ans[i] = nums[i]
+        ans[i] = nums[p] # ans[i] == nums[i]
+        p += 1
     
     print(ans)
+    return ans
 
 
 getConcatenation(nums)
